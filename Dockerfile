@@ -37,6 +37,8 @@ USER root
 # Enable the service
 ADD service/ /etc/service/
 
+VOLUME ["/var/lib/postgresql/"]
+
 EXPOSE 5432
 
 CMD ["/sbin/my_init"]

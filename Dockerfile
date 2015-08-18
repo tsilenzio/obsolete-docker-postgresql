@@ -2,6 +2,8 @@ FROM tsilenzio/base
 
 MAINTAINER Taylor Silenzio <tsilenzio@gmail.com>
 
+VOLUME ["/var/lib/postgresql/"]
+
 # Install nessesary packages
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
     curl -q https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && \
@@ -36,8 +38,6 @@ USER root
 
 # Enable the service
 ADD service/ /etc/service/
-
-VOLUME ["/var/lib/postgresql/"]
 
 EXPOSE 5432
 

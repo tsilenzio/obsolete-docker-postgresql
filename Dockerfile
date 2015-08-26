@@ -14,7 +14,6 @@ ENV PG_CONFDIR="/etc/postgresql/${PG_VERSION}/main" \
     PG_DATADIR="${PG_HOME}/${PG_VERSION}/main"
 
 # Add the config files
-#ADD conf.d/* /etc/postgresql/9.4/main/
 ADD conf.d/* /usr/local/etc/
 
 # Enable the service
